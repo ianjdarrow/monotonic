@@ -1,11 +1,12 @@
 {
   "name": "@ianjdarrow/monotonic",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
     "build": "npx tsc",
-    "test": "ts-mocha -p tsconfig.json test/**/*.spec.ts"
+    "test": "ts-mocha -p tsconfig.json test/**/*.spec.ts",
+    "publish": "npm t && npm run build && npm publish"
   },
   "keywords": [],
   "author": "",

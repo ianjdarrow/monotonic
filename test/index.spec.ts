@@ -1,6 +1,6 @@
 import { expect } from "chai";
 
-import Monotonic, { MonotonicErrors } from "../src";
+import { Monotonic, MonotonicErrors } from "../src";
 
 describe("Monotonic tests", () => {
   describe("String output format", () => {

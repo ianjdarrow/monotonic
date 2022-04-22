@@ -98,5 +98,4 @@ class Monotonic {
   }
 }
 
-export default Monotonic;
-export { MonotonicConstructorOptions, MonotonicErrors };
+export { Monotonic, MonotonicConstructorOptions, MonotonicErrors };

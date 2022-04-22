@@ -18,7 +18,7 @@ By default, `monotonic` generates strings like:
 ## Usage
 
 ```js
-import Monotonic from "@ianjdarrow/monotonic";
+import { Monotonic } from "@ianjdarrow/monotonic";
 
 const mono = new Monotonic({
   maxEventsPerBase: number, // default 1_000_000

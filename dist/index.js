@@ -23,7 +23,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MonotonicErrors = void 0;
+exports.MonotonicErrors = exports.Monotonic = void 0;
 const MonotonicErrors = __importStar(require("./errors"));
 exports.MonotonicErrors = MonotonicErrors;
 class Monotonic {
@@ -87,4 +87,4 @@ class Monotonic {
         }
     }
 }
-exports.default = Monotonic;
+exports.Monotonic = Monotonic;
