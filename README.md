@@ -25,11 +25,21 @@ const mono = new Monotonic({
   resolution: "seconds" | "ms", // default "seconds"
   outputFormat: "string" | "number", // default "string"
 });
+// 1 million distinct IDs generated
 for (let i = 0; i < 1e6; i++) {
-  mono.get(); // 1 million distinct IDs generated
+  mono.get();
 }
 ```
 
-`monotonic` will throw an error if you try to generate more than `maxEventsPerBase` per `resolution` (see "Options" below). By default this is 1,000,000 events per second.
+You can also split the timestamp and nonce back out. This is mostly useful with `outputFormat: 'numeric'`.
+
+```js
+const mono = new Monotonic({ outputFormat: "number" });
+const ts = mono.get();
+// later...
+const { timestamp, nonce } = mono.split(ts); // something like { 1650627455, 0 }
+```
+
+`monotonic` will throw an error if you try to generate more than `maxEventsPerBase` per `resolution`. By default this is 1,000,000 events per second.
 
 Be aware: with `outputFormat: 'number'` and `resolution: 'ms'`, `maxEventsPerBase` can't exceed 1,000 (to avoid exceeding `Number.MAX_SAFE_INTEGER`).
