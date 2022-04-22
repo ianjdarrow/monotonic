@@ -31,7 +31,7 @@ for (let i = 0; i < 1e6; i++) {
 }
 ```
 
-You can also split the timestamp and nonce back out. This is mostly useful with `outputFormat: 'numeric'`.
+You can also split the timestamp and nonce back out. This is mostly useful with `outputFormat: 'number'`.
 
 ```js
 const mono = new Monotonic({ outputFormat: "number" });
