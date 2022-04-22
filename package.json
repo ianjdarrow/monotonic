@@ -5,8 +5,7 @@
   "main": "dist/index.js",
   "scripts": {
     "build": "npx tsc",
-    "test": "ts-mocha -p tsconfig.json test/**/*.spec.ts",
-    "publish": "npm t && npm run build && npm publish"
+    "test": "ts-mocha -p tsconfig.json test/**/*.spec.ts"
   },
   "keywords": [],
   "author": "",
