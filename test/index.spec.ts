@@ -86,6 +86,7 @@ describe("Monotonic tests", () => {
       done();
     });
   });
+
   describe("Numeric output format", () => {
     const mono = new Monotonic({ outputFormat: "number" });
     it("Does a timestamp", (done) => {
@@ -169,6 +170,20 @@ describe("Monotonic tests", () => {
     it("Always makes a unique output", (done) => {
       const NUM_OUTPUTS = 1e5;
       let outputs = new Set<number>();
+      for (let i = 0; i < NUM_OUTPUTS; i++) {
+        outputs.add(mono.get());
+      }
+      expect(outputs.size).to.eq(NUM_OUTPUTS);
+      done();
+    });
+    it("Always makes a unique output with custom base", (done) => {
+      const monoBase = new Monotonic({
+        outputFormat: "number",
+        resolution: "ms",
+        maxEventsPerBase: 1000,
+      });
+      const NUM_OUTPUTS = 1e5;
+      let outputs = new Set<string>();
       for (let i = 0; i < NUM_OUTPUTS; i++) {
         outputs.add(mono.get());
       }
